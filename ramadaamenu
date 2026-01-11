@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ramada Encore By Wyndham Avcılar | Menü</title>
+
+<style>
+  /* Genel */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #8b0000; /* Koyu kırmızı */
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    background-color: #3e0000;
+    text-align: center;
+    padding: 25px 15px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  }
+
+  header img {
+    max-width: 280px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.8));
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px #330000;
+  }
+
+  /* Dil butonları */
+  .lang-buttons {
+    margin-top: 20px;
+  }
+
+  .lang-buttons button {
+    background-color: #b30000;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 22px;
+    margin: 0 8px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .lang-buttons button:hover,
+  .lang-buttons button:focus {
+    background-color: #ff1a1a;
+    outline: none;
+  }
+
+  /* Menü bölümleri */
+  #menu {
+    flex-grow: 1;
+    padding: 25px 15px 60px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    width: 95%;
+  }
+
+  section {
+    background-color: #4a0000;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+  }
+
+  section h2 {
+    margin-top: 0;
+    font-size: 1.9rem;
+    color: #ff3333;
+    border-bottom: 3px solid #ff3333;
+    padding-bottom: 8px;
+    letter-spacing: 1.2px;
+    text-shadow: 1px 1px 2px #330000;
+  }
+
+  /* Menü öğeleri */
+  .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .price {
+    font-weight: 700;
+    color: #ff6666;
+    min-width: 90px;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px #660000;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #3e0000;
+    color: #bbb;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.1);
+    user-select: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.6rem;
+    }
+
+    section {
+      padding: 20px 18px;
+    }
+
+    .item {
+      font-size: 1rem;
+    }
+
+    .price {
+      min-width: 70px;
+      font-size: 0.95rem;
+    }
+
+    .lang-buttons button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      margin: 0 5px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Ramada Encore By Wyndham Avcılar Logo" />
+  <h1>Ramada Encore By Wyndham Avcılar</h1>
+  <div class="lang-buttons">
+    <button onclick="setLang('tr')">TR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<main id="menu"></main>
+
+<footer>© Ramada Encore By Wyndham Avcılar</footer>
+
+<script>
+  const menuData = {
+    kahvalti: {
+      title: { tr: "Kahvaltılar", en: "Breakfasts" },
+      items: [
+        { tr: "Açık Büfe Kahvaltı", en: "Open Buffet Breakfast", price: "750 TRY" },
+        { tr: "Serpme Kahvaltı", en: "Traditional Turkish Breakfast", price: "1300 TRY" },
+        { tr: "Klasik Kahvaltı", en: "Classic Breakfast Plate", price: "550 TRY" },
+        { tr: "Menemen", en: "Turkish Menemen", price: "350 TRY" },
+        { tr: "Sahanda Yumurta", en: "Pan Fried Eggs", price: "270 TRY" },
+        { tr: "Sucuklu Yumurta", en: "Fried Eggs with Sausage", price: "300 TRY" },
+        { tr: "Omlet (Sade / Peynirli / Karışık)", en: "Omelette (Plain / Cheese / Mixed)", price: "250–320 TRY" },
+      ],
+    },
+    starter: {
+      title: { tr: "Başlangıçlar", en: "Starters" },
+      items: [
+        { tr: "Ara Sıcak Tabağı", en: "Hot Appetizer Plate", price: "450 TRY" },
+        { tr: "Paçanga Böreği", en: "Pacanga Pastry Rolls", price: "300 TRY" },
+        { tr: "Patates Tava", en: "Fried Potatoes", price: "270 TRY" },
+        { tr: "Sebze Güveç", en: "Vegetable Casserole", price: "400 TRY" },
+        { tr: "Mantar Güveç", en: "Mushroom Casserole", price: "400 TRY" },
+        { tr: "Pilav", en: "Rice Pilaf", price: "300 TRY" },
+        { tr: "Yoğurt", en: "Yogurt", price: "250 TRY" },
+      ],
+    },
+    salad: {
+      title: { tr: "Salatalar", en: "Salads" },
+      items: [
+        { tr: "Sezar Salata (Tavuklu)", en: "Chicken Caesar Salad", price: "500 TRY" },
+        { tr: "Çıtır Tavuk Salata", en: "Crispy Chicken Salad", price: "460 TRY" },
+        { tr: "Bonfile Salata", en: "Beef Salad", price: "800 TRY" },
+        { tr: "Çoban Salata", en: "Shepherd Salad", price: "250 TRY" },
+        { tr: "Mevsim Salata", en: "Seasonal Salad", price: "250 TRY" },
+      ],
+    },
+    pasta: {
+      title: { tr: "Makarnalar & Noodle", en: "Pasta & Noodles" },
+      items: [
+        { tr: "Spagetti Bolonez", en: "Spaghetti Bolognese", price: "460 TRY" },
+        { tr: "Spagetti Napoliten", en: "Spaghetti Napolitana", price: "500 TRY" },
+        { tr: "Penne Arabiata", en: "Penne Arrabbiata", price: "450 TRY" },
+        { tr: "Mantarlı Kremalı Penne", en: "Creamy Mushroom Penne", price: "450 TRY" },
+        { tr: "Sebzeli Noodle", en: "Vegetable Noodles", price: "400 TRY" },
+        { tr: "Tavuklu Noodle", en: "Chicken Noodles", price: "450 TRY" },
+        { tr: "Etli Noodle", en: "Beef Noodles", price: "700 TRY" },
+      ],
+    },
+  };
+
+  let currentLang = "tr";
+
+  function renderMenu() {
+    const container = document.getElementById("menu");
+    container.innerHTML = "";
+    for (const cat in menuData) {
+      let section = document.createElement("section");
+      section.innerHTML = `<h2>${menuData[cat].title[currentLang]}</h2>`;
+      menuData[cat].items.forEach((i) => {
+        section.innerHTML += `
+          <div class="item">
+            <span>${i[currentLang]}</span>
+            <span class="price">${i.price}</span>
+          </div>`;
+      });
+      container.appendChild(section);
+    }
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    renderMenu();
+  }
+
+  renderMenu();
+</script>
+
+</body>
+</html>
